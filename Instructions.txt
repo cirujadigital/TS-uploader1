@@ -1,0 +1,21 @@
+This programs lets you send data from serial port to Thingspeak. It was written to use with an Arduino board and sensors. In order to use it, you have to:
+
+1) Create a thingspeak user (www.thingspeak.com)
+2) Create a new channel and enable 3 fields at least.
+3) Generate a write API KEY.
+4) Copy and paste te API KEY inside the "api.txt" file (you can find this file inside the data folder).
+5) Program your Arduino in order to send data through the serial Port following this structure:
+
+ 
+Serial.println(Value1+","+Value2+","+Value3+","+Value4","+Value5+","+Value6+","+Value7+","+Value8);
+ delay(t); //where t= 15 seconds minimum.
+
+
+NOTE: If you are going to send just two values, then you have to left in blank the rest of the values, BUT leave the comma:
+   i.e., if you send values to field1 and field2: Serial.print(value1+","+value2+","+","+","+","+","+",")
+
+
+6) Connect the board to USB, open the program and write Serial Port Number's order (if the USB port is number 30 on the list, then write 30)
+
+7) Hit Enter and the programm will start sending data to your thingspeak channel automatically.
+ 
